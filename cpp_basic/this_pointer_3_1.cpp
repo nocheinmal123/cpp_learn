@@ -30,8 +30,8 @@ class A{
     void Hello(A *this){
         std::cout<<"hello"<<std::endl;
     }
-    the num ofp arameters of static function of class: num of parameters
-    the num ofp arameters of non-static function of class: num of parameters + 1(this pointer)
+    the num of parameters of static function of class: num of parameters
+    the num of parameters of non-static function of class: num of parameters + 1(this pointer)
     */
 };
 
