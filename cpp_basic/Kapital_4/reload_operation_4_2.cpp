@@ -17,6 +17,7 @@ class String{
             return str;
         }
         String & operator=(const char *s);
+         String & operator=(const String& s);
         ~String(){
             delete []str;
         }
@@ -24,11 +25,20 @@ class String{
 
 String & String::operator=(const char *s){ //return value is a ref, so
 // we can change the obj through this ref
+    std::cout<<"reload operator=1"<<std::endl;
     delete []str;
     str = new char[strlen(s)+1];
     strcpy(str,s);
     return *this; // return a ref, and the ref is *this, so the private
     // var can be changed through reload of "="
+}
+
+String & String::operator=(const String &s){
+    std::cout<<"reload operator=2"<<std::endl;
+    delete []str;
+    str = new char[strlen(s.str)+1];
+    strcpy(str,s.str);
+    return *this;
 }
 
 int main(){
