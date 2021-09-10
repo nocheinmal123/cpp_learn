@@ -39,3 +39,10 @@ int main(){
     printf("ans = %d\n",ans);
     return 0;
 }
+
+/*
+In summary, 
+const obj can only call const member-func and in the const member-func,
+only the const member func can be called
+non-const obj can call const member-func and non-const member -func
+*/

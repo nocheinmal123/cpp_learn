@@ -65,3 +65,6 @@ CCar decon called
 CEngine decon called
 Ctyre decon called
 */
+
+// If a class encloses a member-obj of another class,
+// this member-obj must be initalized through "list-Initialzation"

@@ -32,3 +32,9 @@ int main(){
     printf("v = %d\n",c2.GetValue()); // automatically using of non-const member func
     return 0;
 }
+
+/*
+If there is const obj and non-const obj, and corresponding reloading of member-func
+the const obj will call the const member-func
+the non-const obj will call the non-const member-func automatically
+*/
