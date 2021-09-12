@@ -18,6 +18,7 @@ class Complex{
 };
 
 Complex::Complex(double r,double i):real(r),image(i){
+
 }
 
 Complex::~Complex(){

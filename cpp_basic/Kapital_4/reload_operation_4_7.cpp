@@ -14,7 +14,7 @@ class CDemo{
         ~CDemo();
         CDemo(const CDemo &c);
         CDemo & operator++();   // using for "++a"
-        CDemo operator++(int);  // using for "a++"
+        CDemo operator++(int);  // using for "a++", need one more "int" in the parameters of func
     friend CDemo & operator--(CDemo &c);
     friend CDemo operator--(CDemo &c,int);
     friend std::ostream & operator<<(std::ostream &out,const CDemo &c);

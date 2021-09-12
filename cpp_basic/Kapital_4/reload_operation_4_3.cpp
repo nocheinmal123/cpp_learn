@@ -16,6 +16,7 @@ class Complex{
     public:
         Complex(double r,double i);
         Complex operator+(double r);
+        Complex& operator=(const Complex& c);
         void Print(){
             std::cout<<real<<", "<<image<<std::endl;
         }
@@ -37,6 +38,13 @@ Complex Complex::operator+(double r){
 Complex operator+(double r,const Complex &c){
     std::cout<<"reload 2"<<std::endl;
     return Complex(r + c.real, c.image);
+}
+
+Complex& Complex::operator=(const Complex& c){
+    std::cout<<"reload ="<<std::endl;
+    real = c.real;
+    image = c.image;
+    return *this;
 }
 
 int main(){
