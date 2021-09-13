@@ -21,7 +21,7 @@ class son: public myclass{
             std::cout<<"hello from son"<<std::endl;
         }
         son(){
-            hello(); // if local exists, using local func
+            hello(); // if local exists, using local func, it is also called "func hide"
         }
         ~son(){
             bye(); // if local dosen't exist, using same func from base class

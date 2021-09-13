@@ -13,7 +13,7 @@ class A{
 
 class B: public A{
     public:
-        virtual void Print(){
+         virtual void Print(){
             printf("B\n");
         }
 };
@@ -27,7 +27,7 @@ class D: public A{
 
 class E: public B{
     public:
-        virtual void Print(){
+         virtual void Print(){
             printf("E\n");
         }
 };

@@ -36,6 +36,9 @@ class Shape{
             width = w;
             height = h;
         }
+        void Print(){
+            std::cout<<"w = "<<width<<"  "<<"h = "<<height<<std::endl;
+        }
         virtual int getArea(){
             std::cout<<"Shape"<<std::endl;
             return width * height;
@@ -66,6 +69,7 @@ int main(){
     Triangle tri(8,6);
 
     /*
+    if no "virual" in the base class
     ps = &rec;
     std::cout<<ps->getArea()<<std::endl;
     ps = &tri;
@@ -78,12 +82,6 @@ int main(){
     48
     */
     // so we have to put "virtual" in front of the func in base class
-
-    ps = &rec;
-    std::cout<<ps->getArea()<<std::endl;
-    ps = &tri;
-    std::cout<<ps->getArea()<<std::endl;
-
     /*
     And now, the Output is:
     Rec
@@ -92,6 +90,12 @@ int main(){
     24
     */
 
+    ps = &rec;
+    std::cout<<ps->getArea()<<std::endl;
+    ps = &tri;
+    std::cout<<ps->getArea()<<std::endl;
+
+    
     // Shape &ref = rec;
     // std::cout<<ref.getArea()<<std::endl;
     Shape &ref = tri;

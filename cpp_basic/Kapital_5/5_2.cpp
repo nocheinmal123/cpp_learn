@@ -5,14 +5,18 @@
 #include <stdlib.h>
 // compensite relation and Inheritance 
 // The below is called compensite relation
+
 class CPoint{
-    double x,y;
-    friend class CCircle;
+    private:
+        double x,y;
+    public:
+        friend class CCircle;
 };
 
 class CCircle{
-    double r;
-    CPoint center;
+    private:
+        double r;
+        CPoint center;
 };
 
 /*

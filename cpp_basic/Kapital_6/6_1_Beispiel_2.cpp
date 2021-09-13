@@ -36,7 +36,7 @@ class DD: public D{
 
 class E: public DD{
     public:
-    void f() {
+    void f() { // "const" deleted, is right now not "polymorphsim"
         std::cout<<"E f"<<std::endl;
     }
     void g(){

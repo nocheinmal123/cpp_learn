@@ -51,6 +51,8 @@ class FlyBug: public Bug{
 
 FlyBug::FlyBug(int legs,int color,int wings):Bug(legs,color),s1(legs),s2(color),nWings(wings){
     std::cout<<"Flybug con called"<<std::endl;
+    // Skill s1(legs);
+    // Skill s2(color);
 }
 
 int main(){

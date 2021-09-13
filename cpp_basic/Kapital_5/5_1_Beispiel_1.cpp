@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+class CUndergraduateStudent;
 class CStudent{
     private:
         std::string name;
@@ -14,14 +15,22 @@ class CStudent{
         void PrintInfo() const;
         void SetInfo(const std::string &name_,const std::string &id_,const int age_,const char gender_);
         std::string Getname() const;
+    friend std::ostream& operator<<(std::ostream& out,const CStudent& c);
 };
 
+std::ostream& operator<<(std::ostream& out,const CStudent& c){
+    out<<c.name<<" "<<c.id<<" "<<c.gender<<" "<<c.age;
+    return out;
+}
+
 void CStudent::PrintInfo() const{
+    std::cout<<"CStudent PrintInfo called"<<std::endl;
     std::cout<<name<<" "<<id<<" "<<gender<<" "<<age<<std::endl;
 }
 
 void CStudent::SetInfo(const std::string &name_,const std::string &id_,const int age_,const char gender_){
-    name = name_; id = id_; gender = gender_;
+    std::cout<<"CStudent SetInfo called"<<std::endl;
+    name = name_; id = id_; age = age_; gender = gender_;
 }
 
 std::string CStudent::Getname() const{
@@ -33,15 +42,17 @@ class CUndergraduateStudent: public CStudent{
         std::string department;
     public:
         void Qualified();
-        void PrintInfo();
-        void SetInfo(const std::string &name_,const std::string &id_,const int age_,const char gender_,const std::string department_);
+        void PrintInfo() const; //override of the same func of base class
+        // SetInfo is not override, cauz the parameter are not same, it is just a new method
+        void SetInfo(const std::string &name_,const std::string &id_,const int age_,const char gender_,const std::string department_); 
+
 };
 
 void CUndergraduateStudent::Qualified(){
     std::cout<<"Qualified for Graduate"<<std::endl;
 }
 
-void CUndergraduateStudent::PrintInfo(){
+void CUndergraduateStudent::PrintInfo() const{
     CStudent::PrintInfo(); //call of function of father class
     std::cout<<department<<std::endl;
 }
@@ -57,5 +68,6 @@ int main(){
     std::cout<<s2.Getname()<<std::endl;
     s2.Qualified();
     s2.PrintInfo();
+    s2.CStudent::PrintInfo();
     return 0;
 }
