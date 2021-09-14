@@ -16,7 +16,7 @@ class CPair{
 };
 // Pair<T1, T2> is the template class name, should be used as "class name" before
 
-template<class T1, class T2>
+template<class T1, class T2> // member-func also needs the "template" statement
 CPair<T1, T2>::CPair(T1 k, T2 v):key(k),value(v){
 
 }
