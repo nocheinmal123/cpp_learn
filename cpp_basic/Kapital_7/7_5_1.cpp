@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <iostream>
-// function template and class template
+// template function
 
 /*
 void swap(int& x,int & y){
