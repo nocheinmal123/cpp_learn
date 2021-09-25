@@ -55,5 +55,20 @@ int main(){
     std::cout<<str2<<", "<<str_ref<<std::endl;
     str_ref = "RRRRRR";
     std::cout<<str2<<", "<<str_ref<<std::endl;
+
+    std::vector<int> v;
+    for(int i=1;i<=10;i++) v.push_back(i);
+    std::vector<int> vv;
+    for(int i=0;i<v.size();i++) vv.push_back(std::move(v[i]));
+    std::cout<<"v: "; for(int i=0;i<v.size();i++) printf("%d ",v[i]); std::cout<<std::endl;
+    std::cout<<"vv: "; for(int i=0;i<vv.size();i++) printf("%d ",vv[i]); std::cout<<std::endl;
+
+    std::vector<std::string> str_v;
+    str_v.push_back("test1"); str_v.push_back("test2"); str_v.push_back("test3");
+    std::vector<std::string> str_vv;
+    for(int i=0;i<str_v.size();i++) str_vv.push_back(std::move(str_v[i]));
+    std::cout<<"v: "; for(int i=0;i<str_v.size();i++) std::cout<<str_v[i]<<" "; std::cout<<std::endl;
+    std::cout<<"vv: "; for(int i=0;i<str_vv.size();i++) std::cout<<str_vv[i]<<" "; std::cout<<std::endl;
+    std::cout<<str_v.size()<<std::endl; std::cout<<str_vv.size()<<std::endl;
     return 0;
 }

@@ -16,7 +16,7 @@ class Demo{
             // SetValue(); wrong, in this kind of const member func, the call of 
             // normal member func is not allowed, cauz the normal member func
             // could change the member var
-            value2 ++; // right, const member func can call
+            value2 ++; // right, static member var can be called
             return value;
         }
         void Compare(){ // non-static member func can call static member-var

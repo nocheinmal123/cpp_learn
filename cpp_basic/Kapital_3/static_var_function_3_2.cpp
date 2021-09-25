@@ -14,7 +14,7 @@ class CReactangle{
         ~CReactangle();
         // static function, won't work at some objs, just work at class
         // is actually global functions !! 
-        // in static functions, cant visit non-static vars or non-static funtions
+        // in static functions, can not visit non-static vars or non-static funtions
         static void Print();
 };
 
