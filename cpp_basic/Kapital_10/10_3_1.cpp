@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <memory>
 #include <iostream>
-// shared_ptr
+// shared_ptr   注意智能指针不是指针，而是类
 // shared_ptr<T> ptr (new T)
 class A{
     private:

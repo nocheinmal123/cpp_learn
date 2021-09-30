@@ -58,6 +58,12 @@ class A{
 };
 
 int main(){
+    B* pb = new B();
+    pb->m_bm = 19;
+    B* pb2 = new B(*(pb));              //这种给参数的new，系统会调用B类的拷贝构造函数
+    delete pb;
+    delete pb2;
+    std::cout<<"----------------------------"<<std::endl;
     A a;
     A a1;
     a1 = a;

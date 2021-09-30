@@ -57,7 +57,8 @@ int main(){
     p->Print();
     delete p;
     CReactangle r4(4,5);
-    r4.Print();
+    r4.Print();                 //静态成员函数调用方法一
+    CReactangle::Print();       //静态成员函数调用方法二
 
     // "sizeof" won't calculate the static var of class, cauz static vars are global
     printf("%ld\n",sizeof(Myclass));
