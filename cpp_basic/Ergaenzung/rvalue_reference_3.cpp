@@ -89,7 +89,7 @@ int main(){
     // text是个char类型，而calc函数是个string的常引用，因此，系统会调用
     // string的构造函数，产生一个临时变量。注意，函数里面必须是常引用，因为
     // C++只会为常引用产生临时变量，系统不允许修改临时变量的这种行为发生
-    // 如果去掉const，将导致编译错误。
+    // 如果去掉const，将导致编译错误。For more, see rvalue_reference_4.cpp
 
     return 0;
 }

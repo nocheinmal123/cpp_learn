@@ -96,13 +96,25 @@ int main(){
     else std::cout<<"multi"<<std::endl;
     // 3. reset成员函数
     /*
-    reset不带参数时间
+    reset不带参数
     如果p_2是唯一指向该对象的指针，则将p_2置空，
-    否则不释放p_2指向的对象，但是指向该对象的引用计数会减少1
+    否则不释放p_2指向的对象，将p_2置空，但是指向该对象的引用计数会减少1
     */
     p_2.reset();
     if(p_2 == nullptr) std::cout<<"p_2 is now null"<<std::endl;
     else std::cout<<"p_2 is not null"<<std::endl;
+
+    // 注意下面一个例子
+    std::shared_ptr<int> p4(new int(100));
+    auto p5 = p4;
+    std::cout << "p1.count = " << p4.use_count() << std::endl;      //输出2
+    std::cout << "p2.count = " << p5.use_count() << std::endl;      //输出2
+    p4.reset();
+    std::cout << "p1.count = " << p4.use_count() << std::endl;      //输出0
+    std::cout << "p2.count = " << p5.use_count() << std::endl;      //输出1
+    //为什么reset过后，p4的use_count是0，而不是1呢，因为reset会将p4置空，p4将不再
+    // 指向之前的内存，所有这时的p_4.use_count无法获取到之前那个内存的引用计数了
+    // 所以变成0了
     /*
     reset带参数
     如果p_2是唯一指向该对象的指针，则将p_2绑定的对象释放，再将p_2指向新内存
