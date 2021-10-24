@@ -50,6 +50,8 @@ A getA(){
 }
 
 int main(){
+    B b1;
+    B b2(b1);
     B* pb = new B();
     pb->m_bm = 19;
     B* pb2 = new B(*pb); //这种给参数的new，系统会调用B类的拷贝构造函数
