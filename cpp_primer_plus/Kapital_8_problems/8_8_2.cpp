@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <algorithm>
 
+
 struct CandyBar{
     char *name;
     double weight;
