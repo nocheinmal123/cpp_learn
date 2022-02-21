@@ -12,8 +12,9 @@ template<typename Type>
 class HasFriend{
     private:  
         Type item;
-        static int ct;
+        // static int ct;
     public:
+        static int ct;
         HasFriend(const Type& _item):item(_item){
             ct ++;
         }
