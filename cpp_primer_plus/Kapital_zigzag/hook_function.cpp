@@ -31,6 +31,16 @@ typedef struct HookFunction {
     int (*handle_)(int, int);
 };
 
+/*
+typedef int (*pFunc)(int, int);
+
+pFunc arr[] = {
+    add,
+    minus,
+    multi
+};
+*/
+
 HookFunction func[] = {
     {add},
     {minus},
