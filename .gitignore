@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+cpp_primer_plus/.vscode/
+multi_thread/.vscode/
+
+
