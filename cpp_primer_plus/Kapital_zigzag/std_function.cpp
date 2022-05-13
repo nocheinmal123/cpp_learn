@@ -1,4 +1,5 @@
 #include <functional>
+#include <thread>
 #include <memory>
 #include <string>
 #include <iostream>
@@ -36,6 +37,7 @@ class Sample {
         }
         int normal_class_function(int k, int p) {
             std::cout << "normal function of class sample called.\n";
+            std::cout << "k = " << k << ", p = "<< p << std::endl;
             return k * 2;
         }
 };
@@ -102,4 +104,12 @@ int main() {
                                                     std::placeholders::_1,
                                                     std::placeholders::_2);
     std::cout << func_11(92, 92) << std::endl;
+
+
+    std::thread task1(std::bind(&Sample::normal_class_function,
+                            sp_sample,
+                            12,
+                            20));
+    task1.join();
+    return 0;
 }
