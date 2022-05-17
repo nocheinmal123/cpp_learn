@@ -51,6 +51,17 @@ void func_Dummy_(Args&& ...args) {
     calculate(returnFunc<Args>(args)...);
 }
 
+int sum = 0;
+
+template <int num, int... nums>
+void add() {
+    sum += num;
+    if constexpr ((sizeof ... (nums)) > 0) { // 编译时if, 否则模板推导，也就是编译期间, 不会检查if ,模板推导会失败
+        add<nums...>();
+    }
+}
+
+
 /**
  * 总结规则如下
  * 设args被声明为一个函数参数包，其扩展方式有
@@ -66,5 +77,8 @@ void func_Dummy_(Args&& ...args) {
 int main() {
     func_Dummy<int, double>(3, 10.2);
     func_Dummy_(1, 3.14);
+    
+    add<1, 2, 3>();
+    std::cout << "sum = " << sum << std::endl;
     return 0;
 }
